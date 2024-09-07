@@ -10,7 +10,6 @@ module.exports = {
     STATIC_PORT: process.env.APP_STATIC_PORT,
     API_PORT: process.env.APP_API_PORT,
     /**
-     * Представляет автора этой статьи
      * @type {'ws' | 'http'}
      */
     transport: 'http',

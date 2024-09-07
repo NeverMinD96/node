@@ -3,20 +3,13 @@
 const fsp = require('node:fs').promises;
 const path = require('node:path');
 const staticServer = require('./static.js');
-const load = require('./load.js');
-const db = require('./db.js');
-const hash = require('./hash.js');
 const logger = require('./logger.js');
 const CONFIG = require('./config');
 
-const sandbox = {
-  console: Object.freeze(logger),
-  db: Object.freeze(db),
-  common: { hash },
-};
-
 const apiPath = path.join(process.cwd(), './api');
 const routing = {};
+
+const db = require('./db');
 
 const server = require('./transports/index.js')(CONFIG.APP.transport);
 
@@ -26,7 +19,7 @@ const server = require('./transports/index.js')(CONFIG.APP.transport);
     if (!fileName.endsWith('.js')) continue;
     const filePath = path.join(apiPath, fileName);
     const serviceName = path.basename(fileName, '.js');
-    routing[serviceName] = await load(filePath, sandbox);
+    routing[serviceName] = require(filePath)(db);
   }
 
   staticServer('./static', { port: CONFIG.APP.STATIC_PORT, logger: logger });
