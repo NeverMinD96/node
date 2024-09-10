@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   DB: {
     host: process.env.DB_HOST,
@@ -14,9 +16,6 @@ module.exports = {
   APP: {
     STATIC_PORT: process.env.APP_STATIC_PORT,
     API_PORT: process.env.APP_API_PORT,
-    /**
-     * @type {'ws' | 'http'}
-     */
     transport: 'http',
   },
 };

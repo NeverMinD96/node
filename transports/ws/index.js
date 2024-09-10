@@ -1,7 +1,9 @@
+'use strict';
+
 const { Server } = require('ws');
 
 module.exports = (routing, options) => {
-  const { logger, port } = options;
+  const { console, port } = options;
 
   const ws = new Server({ port });
 
@@ -22,16 +24,16 @@ module.exports = (routing, options) => {
       }
       const json = JSON.stringify(args);
       const parameters = json.substring(1, json.length - 1);
-      logger.log(`${ip} ${name}.${method}(${parameters})`);
+      console.log(`${ip} ${name}.${method}(${parameters})`);
       try {
         const result = await handler(...args);
         connection.send(JSON.stringify(result.rows), { binary: false });
       } catch (err) {
-        logger.error(err);
+        console.error(err);
         connection.send('"Server error"', { binary: false });
       }
     });
   });
 
-  logger.log(`API on port ${port}`);
+  console.log(`API on port ${port}`);
 };

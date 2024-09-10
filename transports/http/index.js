@@ -10,7 +10,7 @@ const receiveArgs = async (req) => {
 };
 
 module.exports = (routing, options) => {
-  const { logger, port } = options;
+  const { console, port } = options;
 
   http
     .createServer(async (req, res) => {
@@ -25,11 +25,11 @@ module.exports = (routing, options) => {
       const args = [];
       if (signature.includes('(id')) args.push(id);
       if (signature.includes('{')) args.push(await receiveArgs(req));
-      logger.log(`${socket.remoteAddress} ${method} ${url}`);
+      console.log(`${socket.remoteAddress} ${method} ${url}`);
       const result = await handler(...args);
       res.end(JSON.stringify(result.rows));
     })
     .listen(port);
 
-  logger.log(`HTTP server start on port ${port}`);
+  console.log(`HTTP server start on port ${port}`);
 };

@@ -19,13 +19,13 @@ importers:
         version: 8.18.0
     devDependencies:
       '@types/node':
-        specifier: ^18.11.18
-        version: 18.19.50
+        specifier: ^20.16.0
+        version: 20.16.5
       '@types/pg':
-        specifier: ^8.6.6
+        specifier: ^8.11.8
         version: 8.11.8
       '@types/ws':
-        specifier: ^8.5.4
+        specifier: ^8.5.12
         version: 8.5.12
       eslint:
         specifier: ^8.31.0
@@ -100,8 +100,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@18.19.50':
-    resolution: {integrity: sha512-xonK+NRrMBRtkL1hVCc3G+uXtjh1Al4opBLjqVmipe5ZAaBYWW6cNAiBVZ1BvmkBhep698rP3UM3aRAdSALuhg==}
+  '@types/node@20.16.5':
+    resolution: {integrity: sha512-VwYCweNo3ERajwy0IUlqqcyZ8/A7Zwa9ZP3MnENWcB11AejO+tLy3pu850goUW2FC/IJMdZUfKpX/yxL1gymCA==}
 
   '@types/pg@8.11.8':
     resolution: {integrity: sha512-IqpCf8/569txXN/HoP5i1LjXfKZWL76Yr2R77xgeIICUbAYHeoaEZFhYHo2uDftecLWrTJUq63JvQu8q3lnDyA==}
@@ -1003,8 +1003,8 @@ packages:
   undefsafe@2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -1101,19 +1101,19 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@18.19.50':
+  '@types/node@20.16.5':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.19.8
 
   '@types/pg@8.11.8':
     dependencies:
-      '@types/node': 18.19.50
+      '@types/node': 20.16.5
       pg-protocol: 1.6.1
       pg-types: 4.0.2
 
   '@types/ws@8.5.12':
     dependencies:
-      '@types/node': 18.19.50
+      '@types/node': 20.16.5
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -2131,7 +2131,7 @@ snapshots:
 
   undefsafe@2.0.5: {}
 
-  undici-types@5.26.5: {}
+  undici-types@6.19.8: {}
 
   uri-js@4.4.1:
     dependencies:
