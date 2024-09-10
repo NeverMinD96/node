@@ -5,11 +5,7 @@ const CONFIG = require('./config');
 const pg = require('pg');
 
 const pool = new pg.Pool({
-  host: CONFIG.DB.HOST,
-  port: CONFIG.DB.PORT,
-  database: CONFIG.DB.NAME,
-  user: CONFIG.DB.USER,
-  password: CONFIG.DB.PASSWORD,
+  ...CONFIG.DB,
 });
 
 module.exports = (table) => ({
